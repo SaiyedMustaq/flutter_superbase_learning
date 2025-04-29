@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_superbase_learning/auth_service.dart';
 import 'package:flutter_superbase_learning/sbAppButton.dart';
 import 'package:flutter_superbase_learning/sbTextField.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -11,9 +12,9 @@ class SingupScreen extends StatefulWidget {
 }
 
 class SingupScreenyWidgetState extends State<SingupScreen> {
-  final TextEditingController emialController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final supabaseauth = Supabase.instance.client.auth;
+
   @override
   void initState() {
     super.initState();
@@ -25,48 +26,29 @@ class SingupScreenyWidgetState extends State<SingupScreen> {
       appBar: AppBar(backgroundColor: Colors.white),
       body: Column(
         children: <Widget>[
-          const Text("SignUp",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold)),
+          const Text("SignUp", style: TextStyle(color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold)),
           const SizedBox(height: 60),
           SBTextField(
-            controller: emialController,
-            hint: "Enetr email",
+            controller: emailController,
+            hint: "Enter email",
           ),
           const SizedBox(height: 20),
           SBTextField(
             controller: passwordController,
-            hint: "Enetr surname",
+            hint: "Enter Password",
           ),
           const SizedBox(height: 20),
           Sbappbutton(
-            buttonText: "Singup",
+            buttonText: "Sing Up",
             onTap: () async {
-              final reesult = await supabaseauth.signUp(
-                  email: emialController.text,
-                  password: passwordController.text,
-                  data: {
-                    "email": emialController.text,
-                    "name": passwordController.text
-                  });
+              final AuthResponse res = await AuthService.signUpWithEmailPassword(
+                email: "Example04@gmail.com",
+                password: "Exam@04",
+              );
 
-              if (reesult.user != null) {
-                print("User created sucessfully");
+              if (res.user != null) {
+                print("User created successfully");
               }
-              // await supabase.client.from("user").insert({
-              //   "email": emialController.text,
-              //   "surname": passwordController.text
-              // });
-
-              // AuthResponse response = await supabase.client.auth.signUp(
-              //   email: emialController.text,
-              //   password: passwordController.text,
-              // );
-              // if (response.user != null) {
-              //   print("User created sucessfully");
-              // }
             },
           )
         ],
