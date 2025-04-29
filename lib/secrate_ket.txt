@@ -1,0 +1,7 @@
+SUPER BASE DATABASE NAME AND PASSWORD
+NAME :: superbase_learning
+PASSWORD :: 4yEVMlTLIygnAAlQ
+
+
+NAME :: supaCrashCource
+PASSWORD :: WMyuP6DZg8PctHgl

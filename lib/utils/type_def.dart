@@ -1,0 +1,1 @@
+typedef ValidaterOrCallback=String Function(String? value);
