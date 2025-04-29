@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_superbase_learning/superbase_database/note_database.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:superbase_flutter_application/superbase_database/note_database.dart';
 
 import '../../../di/locator.dart';
 import '../../../routes/route_name.dart';

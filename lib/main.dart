@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_superbase_learning/di/locator.dart';
+import 'package:flutter_superbase_learning/my_app.dart';
+import 'package:flutter_superbase_learning/services/superbase_services.dart';
 import 'package:get/get.dart';
-import 'package:superbase_flutter_application/di/locator.dart';
-import 'package:superbase_flutter_application/my_app.dart';
-import 'package:superbase_flutter_application/services/superbase_services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

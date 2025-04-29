@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_superbase_learning/api/auth_api.dart';
+import 'package:flutter_superbase_learning/services/superbase_services.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:superbase_flutter_application/api/auth_api.dart';
-import 'package:superbase_flutter_application/services/superbase_services.dart';
+
 
 import '../../../di/local_storage_service.dart';
 import '../../../di/locator.dart';

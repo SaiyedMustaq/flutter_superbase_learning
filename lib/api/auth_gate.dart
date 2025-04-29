@@ -9,10 +9,10 @@ authorized - user is logged in
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_superbase_learning/features/auth/screen/sign_in_page.dart';
+import 'package:flutter_superbase_learning/features/auth/screen/todo_screen.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:superbase_flutter_application/features/auth/screen/sign_in_page.dart';
-import 'package:superbase_flutter_application/features/auth/screen/todo_screen.dart';
 
 import '../routes/route_name.dart';
 import '../services/superbase_services.dart';
@@ -29,7 +29,8 @@ class _AuthGateState extends State<AuthGate> {
   final SuperbaseServices services = Get.find<SuperbaseServices>();
   @override
   void initState() {
-    _authSubscription = Supabase.instance.client.auth.onAuthStateChange.listen((data) {
+    _authSubscription =
+        Supabase.instance.client.auth.onAuthStateChange.listen((data) {
       final session = data.session;
       if (session == null) {
         Get.toNamed(RouteName.signIn);

@@ -1,9 +1,9 @@
 // Sign Up Page
 import 'package:flutter/material.dart';
+import 'package:flutter_superbase_learning/features/auth/controller/sign_up_controller.dart';
+import 'package:flutter_superbase_learning/features/auth/screen/sign_in_page.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/route_manager.dart';
-import 'package:superbase_flutter_application/features/auth/controller/sign_up_controller.dart';
-import 'package:superbase_flutter_application/features/auth/screen/sign_in_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});

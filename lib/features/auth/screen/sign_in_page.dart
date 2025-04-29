@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_superbase_learning/routes/route_name.dart';
 import 'package:get/get.dart';
-import 'package:superbase_flutter_application/routes/route_name.dart';
+
 
 import '../controller/login_controller.dart';
 
@@ -25,9 +26,9 @@ class _SignInPageState extends State<SignInPage> {
               : Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 60.0),
+                    const SizedBox(height: 60.0),
                     // Sign In title
-                    Text(
+                    const Text(
                       'Sign In',
                       style: TextStyle(
                         fontSize: 28,
@@ -35,20 +36,20 @@ class _SignInPageState extends State<SignInPage> {
                         color: Colors.black,
                       ),
                     ),
-                    SizedBox(height: 40.0),
+                    const SizedBox(height: 40.0),
                     // Email field (now uses global style)
                     TextField(
                       controller: controller.emailController,
-                      decoration: InputDecoration(labelText: 'Email'),
+                      decoration: const InputDecoration(labelText: 'Email'),
                     ),
-                    SizedBox(height: 20.0),
+                    const SizedBox(height: 20.0),
                     // Password field (now uses global style)
                     TextField(
                       controller: controller.passwordController,
                       obscureText: true,
-                      decoration: InputDecoration(labelText: 'Password'),
+                      decoration: const InputDecoration(labelText: 'Password'),
                     ),
-                    SizedBox(height: 20.0),
+                    const SizedBox(height: 20.0),
                     // Forgot Password link
                     Align(
                       alignment: Alignment.centerRight,
@@ -56,13 +57,13 @@ class _SignInPageState extends State<SignInPage> {
                         onPressed: () {
                           // Handle forgot password action
                         },
-                        child: Text(
+                        child: const Text(
                           'Forgot Password?',
                           style: TextStyle(fontSize: 14),
                         ),
                       ),
                     ),
-                    Spacer(), // Pushes the bottom elements to the bottom
+                    const Spacer(), // Pushes the bottom elements to the bottom
                     // Sign Up and Submit button row
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -70,7 +71,7 @@ class _SignInPageState extends State<SignInPage> {
                         // Sign Up link
                         TextButton(
                           onPressed: () => Get.toNamed(RouteName.signup),
-                          child: Text(
+                          child: const Text(
                             'Sign Up',
                             style: TextStyle(
                                 color: Colors.black, // Override global style for this button
@@ -94,7 +95,7 @@ class _SignInPageState extends State<SignInPage> {
                             }
                           },
                           child: controller.isButtonLoading.value
-                              ? SizedBox(
+                              ? const SizedBox(
                                   height: 20,
                                   width: 20,
                                   child: CircularProgressIndicator(
@@ -102,7 +103,7 @@ class _SignInPageState extends State<SignInPage> {
                                     strokeWidth: 2,
                                   ),
                                 )
-                              : Icon(
+                              : const Icon(
                                   Icons.arrow_forward,
                                   color: Colors.white,
                                 ),
